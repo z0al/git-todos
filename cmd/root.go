@@ -25,7 +25,7 @@ import "github.com/spf13/cobra"
 var rootCmd = &cobra.Command{
 	Use:     "git-todos [command]",
 	Short:   "A Git-based Todos App for Developers",
-	Version: "v0.1.0",
+	Version: "0.1.0",
 }
 
 // Execute adds all child commands to the root command and sets flags
