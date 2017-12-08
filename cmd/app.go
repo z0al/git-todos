@@ -16,16 +16,33 @@ package cmd
 
 import (
 	// Native
+	"fmt"
 	"os"
 
 	// Packages
 	"github.com/spf13/cobra"
+
+	// Ours
+	"github.com/ahmed-taj/git-todos/lib/git"
 )
 
 // appCmd represents the base command when called without any subcommands
 var appCmd = &cobra.Command{
 	Use:   "git-todos [command]",
 	Short: "A Git based Todos App for Developers",
+	PersistentPreRun: func(cmd *cobra.Command, args []string) {
+		// 'help' and 'version' commands don't require git
+		if cmd.Name() == "help" || cmd.Name() == "version" {
+			return
+		}
+
+		// Do we have git?
+		if !git.IsInstalled() {
+			fmt.Println("Command not found: git")
+			fmt.Println("Make sure Git installed and available in PATH")
+			os.Exit(1)
+		}
+	},
 }
 
 // Execute adds all child commands to the app command and sets flags
