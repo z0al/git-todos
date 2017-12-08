@@ -1,4 +1,4 @@
-// Copyright © 2017 AHMED TAJELSIR ALI <ah.tajelsir@gmail.com>
+// Copyright © 2017 Ahmed T. Ali <ah.tajelsir@gmail.com>
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
 package main
 
 // Ours
-import "git-todos/cmd"
+import "github.com/ahmed-taj/git-todos/cmd"
 
 func main() {
 	cmd.Execute()

@@ -21,17 +21,16 @@ import "os"
 // Packages
 import "github.com/spf13/cobra"
 
-// rootCmd represents the base command when called without any subcommands
-var rootCmd = &cobra.Command{
-	Use:     "git-todos [command]",
-	Short:   "A Git-based Todos App for Developers",
-	Version: "0.1.0",
+// appCmd represents the base command when called without any subcommands
+var appCmd = &cobra.Command{
+	Use:   "git-todos [command]",
+	Short: "A Git-based Todos App for Developers",
 }
 
-// Execute adds all child commands to the root command and sets flags
+// Execute adds all child commands to the app command and sets flags
 // appropriately. This is called by main.main().
 func Execute() {
-	if err := rootCmd.Execute(); err != nil {
+	if err := appCmd.Execute(); err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
