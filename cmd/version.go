@@ -14,11 +14,13 @@
 
 package cmd
 
-// Native
-import "fmt"
+import (
+	// Native
+	"fmt"
 
-// Packages
-import "github.com/spf13/cobra"
+	// Packages
+	"github.com/spf13/cobra"
+)
 
 // VERSION will be automatically set by GoReleaser to the current Git tag
 // (the 'v' prefix is stripped)

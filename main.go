@@ -14,8 +14,10 @@
 
 package main
 
-// Ours
-import "github.com/ahmed-taj/git-todos/cmd"
+import (
+	// Ours
+	"github.com/ahmed-taj/git-todos/cmd"
+)
 
 func main() {
 	cmd.Execute()

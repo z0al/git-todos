@@ -14,11 +14,13 @@
 
 package cmd
 
-// Native
-import "os"
+import (
+	// Native
+	"os"
 
-// Packages
-import "github.com/spf13/cobra"
+	// Packages
+	"github.com/spf13/cobra"
+)
 
 // appCmd represents the base command when called without any subcommands
 var appCmd = &cobra.Command{
