@@ -19,7 +19,7 @@ import (
 	"os/exec"
 )
 
-// IsInstalled checks if git is installed locally
+// IsInstalled checks if 'git' command exists in the PATH
 func IsInstalled() bool {
 	if _, err := exec.LookPath("git"); err != nil {
 		return false

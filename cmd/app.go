@@ -39,14 +39,14 @@ var appCmd = &cobra.Command{
 		// Do we have git?
 		if !git.IsInstalled() {
 			fmt.Println("Command not found: git")
-			fmt.Println("Make sure Git installed and available in PATH")
+			fmt.Println("Make sure Git installed and available in the PATH")
 			os.Exit(1)
 		}
 
-		// Are we inside a git repository?
+		// Are we inside a Git repository?
 		if _, err := git.GetRoot(); err != nil {
-			fmt.Println("Not a git repository (or any of the parent directories)")
-			fmt.Println("You must be inside a git repository to run commands")
+			fmt.Println("Not a Git repository (or any of the parent directories)")
+			fmt.Println("You must be inside a Git repository to run commands")
 			os.Exit(1)
 		}
 	},
