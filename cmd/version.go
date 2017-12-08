@@ -16,22 +16,22 @@ package cmd
 
 // Native
 import "fmt"
-import "os"
 
 // Packages
 import "github.com/spf13/cobra"
 
-// appCmd represents the base command when called without any subcommands
-var appCmd = &cobra.Command{
-	Use:   "git-todos [command]",
-	Short: "A Git based Todos App for Developers",
+// VERSION will be automatically set by GoReleaser to the current Git tag
+// (the 'v' prefix is stripped)
+var VERSION = "master"
+
+var versionCmd = &cobra.Command{
+	Use:   "version",
+	Short: "Print the version number",
+	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Printf("⚡️ git todos v%s\n", VERSION)
+	},
 }
 
-// Execute adds all child commands to the app command and sets flags
-// appropriately. This is called by main.main().
-func Execute() {
-	if err := appCmd.Execute(); err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
+func init() {
+	appCmd.AddCommand(versionCmd)
 }
