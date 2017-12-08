@@ -15,7 +15,6 @@
 package cmd
 
 // Native
-import "fmt"
 import "os"
 
 // Packages
@@ -31,7 +30,6 @@ var appCmd = &cobra.Command{
 // appropriately. This is called by main.main().
 func Execute() {
 	if err := appCmd.Execute(); err != nil {
-		fmt.Println(err)
 		os.Exit(1)
 	}
 }
