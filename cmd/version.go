@@ -24,13 +24,23 @@ import (
 
 // VERSION will be automatically set by GoReleaser to the current Git tag
 // (the 'v' prefix is stripped)
-var VERSION = "master"
+var VERSION = "X.Y.Z"
 
 var versionCmd = &cobra.Command{
-	Use:   "version",
-	Short: "Print the version number",
+	Use:     "version",
+	Aliases: []string{"about"},
+	Short:   "Print the version number",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Printf("⚡️ git todos v%s\n", VERSION)
+		fmt.Printf(`
+    ╭────────────────────────────────────────────╮
+    │   /    Git todos ( v%s )                │
+    │  /|_                                       │
+    │ /_ /   By Ahmed T. Ali (https://ahmed.sd)  │
+    │   /                                        │
+    │  /     Happy Coding!                       │
+    ╰────────────────────────────────────────────╯
+
+`, VERSION)
 	},
 }
 
