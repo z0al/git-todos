@@ -24,7 +24,7 @@ import (
 
 var listCmd = &cobra.Command{
 	Use:     "list",
-	Aliases: []string{"ls"},
+	Aliases: []string{"ls", "show"},
 	Args:    cobra.MaximumNArgs(0),
 	Short:   "List available Todos",
 	Run: func(cmd *cobra.Command, args []string) {
