@@ -17,6 +17,7 @@ package git
 import (
 	// Native
 	"os/exec"
+	"strings"
 )
 
 // IsInstalled checks if 'git' command exists in the PATH
@@ -31,5 +32,5 @@ func IsInstalled() bool {
 func GetRoot() (string, error) {
 	cmd := exec.Command("git", "rev-parse", "--show-toplevel")
 	root, err := cmd.CombinedOutput()
-	return string(root), err
+	return strings.Trim(string(root), " \t\n"), err
 }
