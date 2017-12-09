@@ -38,7 +38,7 @@ var addCmd = &cobra.Command{
 				Name: "title",
 				Validate: survey.ComposeValidators(
 					survey.MinLength(1),
-					survey.MaxLength(79),
+					survey.MaxLength(70),
 				),
 				Prompt: &survey.Input{
 					Message: "Title",
