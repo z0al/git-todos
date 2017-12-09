@@ -29,7 +29,7 @@ import (
 // appCmd represents the base command when called without any subcommands
 var appCmd = &cobra.Command{
 	Use:   "git-todos [command]",
-	Short: "A Git based Todos App for Developers",
+	Short: "A Git based Todos App for Developers ⚡",
 	PersistentPreRun: func(cmd *cobra.Command, args []string) {
 		// Some commands don't require git
 		name := cmd.Name()
