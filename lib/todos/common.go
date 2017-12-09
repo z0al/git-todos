@@ -19,11 +19,8 @@ import (
 	"io/ioutil"
 	"os"
 	"path"
-	"sort"
 
 	// Packages
-	"github.com/ttacon/chalk"
-	survey "gopkg.in/AlecAivazis/survey.v1"
 	yaml "gopkg.in/yaml.v2"
 
 	// Ours
@@ -92,32 +89,4 @@ func exitWithError(filename string) {
 		"An error occured when trying to read Todos from '" + filename + "'",
 	)
 	os.Exit(1)
-}
-
-// Select asks the user to select a single Todo from all avaiable Todos and
-// returns it.
-func Select() (Todo, error) {
-	// All Todos
-	todosMap := List()
-
-	// Extract Todo titles
-	var titles []string
-	for t := range todosMap {
-		titles = append(titles, t)
-	}
-	// Sort them
-	sort.Strings(titles)
-
-	var selected string
-	prompt := &survey.Select{
-		Message:  "Select Todo " + chalk.Dim.TextStyle("(Use arrow keys)"),
-		Options:  titles,
-		PageSize: 10,
-	}
-
-	err := survey.AskOne(prompt, &selected, nil)
-	if err != nil {
-		return Todo{}, err
-	}
-	return todosMap[selected], nil
 }
