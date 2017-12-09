@@ -1,0 +1,18 @@
+builds:
+- goos:
+  - linux
+  - darwin
+  - windows
+  goarch:
+  - amd64
+  - "386"
+  main: .
+  ldflags: -s -w -X github.com/ahmed-taj/git-todos/cmd.VERSION={{.Version}}
+archive:
+  format: tar.gz
+  format_overrides:
+    - goos: windows
+      format: zip
+  files:
+  - LICENSE
+  - README.md
