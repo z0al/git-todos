@@ -15,13 +15,8 @@
 package cmd
 
 import (
-	// Native
-	"sort"
-
 	// Packages
 	"github.com/spf13/cobra"
-	"github.com/ttacon/chalk"
-	"gopkg.in/AlecAivazis/survey.v1"
 
 	// Ours
 	"github.com/ahmed-taj/git-todos/lib/todos"
@@ -32,27 +27,11 @@ var listCmd = &cobra.Command{
 	Aliases: []string{"ls"},
 	Short:   "List available Todos",
 	Run: func(cmd *cobra.Command, args []string) {
+		// Ask the user to select a Todo
+		todo, err := todos.Select()
 
-		// All Todos
-		todosMap := todos.List()
-
-		// Extract Todo titles
-		var titles []string
-		for t := range todosMap {
-			titles = append(titles, t)
-		}
-		// Sort them
-		sort.Strings(titles)
-
-		var selected string
-		prompt := &survey.Select{
-			Message:  "Select Todo " + chalk.Dim.TextStyle("(Use arrow keys)"),
-			Options:  titles,
-			PageSize: 10,
-		}
-
-		if err := survey.AskOne(prompt, &selected, nil); err == nil {
-			todos.FormatAndPrint(todosMap[selected])
+		if err == nil {
+			todos.FormatAndPrint(todo)
 		}
 	},
 }
