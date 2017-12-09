@@ -16,7 +16,6 @@ package cmd
 
 import (
 	// Native
-	"fmt"
 	"os"
 
 	// Packages
@@ -24,6 +23,7 @@ import (
 
 	// Ours
 	"github.com/ahmed-taj/git-todos/lib/git"
+	"github.com/ahmed-taj/git-todos/lib/log"
 )
 
 // appCmd represents the base command when called without any subcommands
@@ -31,22 +31,21 @@ var appCmd = &cobra.Command{
 	Use:   "git-todos [command]",
 	Short: "A Git based Todos App for Developers",
 	PersistentPreRun: func(cmd *cobra.Command, args []string) {
-		// 'help' and 'version' commands don't require git
-		if cmd.Name() == "help" || cmd.Name() == "version" {
+		// Some commands don't require git
+		name := cmd.Name()
+		if name == "help" || name == "version" || name == "about" {
 			return
 		}
 
 		// Do we have git?
 		if !git.IsInstalled() {
-			fmt.Println("Command not found: git")
-			fmt.Println("Make sure Git installed and available in the PATH")
+			log.Error("Git not found. Make sure Git is available in the PATH")
 			os.Exit(1)
 		}
 
 		// Are we inside a Git repository?
 		if _, err := git.GetRoot(); err != nil {
-			fmt.Println("Not a Git repository (or any of the parent directories)")
-			fmt.Println("You must be inside a Git repository to run commands")
+			log.Error("You must be inside a Git repository to run this command")
 			os.Exit(1)
 		}
 	},

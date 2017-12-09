@@ -38,6 +38,12 @@
   revision = "4c012f6dcd9546820e378d0bdda4d8fc772cdfea"
 
 [[projects]]
+  name = "github.com/ttacon/chalk"
+  packages = ["."]
+  revision = "76b3c8b611dea8f83e49e9ce81fc2b189e0ef3d2"
+  version = "v0.1"
+
+[[projects]]
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix"]
@@ -52,6 +58,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "370b82fb9721432ac473cbe8a7ec3a2e92678dce535562498965f7aeafae3fe4"
+  inputs-digest = "61770f7aab8a826a46e43a8b8d05a95496162dff57b17c34540efe7943d10303"
   solver-name = "gps-cdcl"
   solver-version = 1
