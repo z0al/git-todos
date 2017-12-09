@@ -17,7 +17,7 @@ package cmd
 import (
 	// Packages
 	"github.com/spf13/cobra"
-	"gopkg.in/AlecAivazis/survey.v1"
+	survey "gopkg.in/AlecAivazis/survey.v1"
 
 	// Ours
 	"github.com/ahmed-taj/git-todos/lib/todos"
@@ -30,7 +30,7 @@ var addCmd = &cobra.Command{
 	Use:     "add",
 	Aliases: []string{"create", "new"},
 	Args:    cobra.MaximumNArgs(0),
-	Short:   "Add a Todo item",
+	Short:   "Add a new Todo",
 	Run: func(cmd *cobra.Command, args []string) {
 		// The questions to ask
 		questions := []*survey.Question{
