@@ -15,9 +15,6 @@
 package cmd
 
 import (
-	// Native
-	"os"
-
 	// Packages
 	"github.com/spf13/cobra"
 	"github.com/ttacon/chalk"
@@ -25,7 +22,6 @@ import (
 
 	// Ours
 	"github.com/ahmed-taj/git-todos/lib/git"
-	"github.com/ahmed-taj/git-todos/lib/log"
 	"github.com/ahmed-taj/git-todos/lib/todos"
 )
 
@@ -94,12 +90,9 @@ var finishCmd = &cobra.Command{
 
 			// Finally, Ask!
 			if err := survey.Ask(questions, &answers); err == nil {
-				_, err := git.Commit(answers)
-				if err != nil {
-					log.Error("Failed to commit. Did you forget to stage your changes?")
-					os.Exit(1)
-				}
-				log.Info("Your work has been commited")
+				// Perform git commit
+				git.Commit(answers)
+
 				// The todo should no longer exist; git log to see your history
 				todos.Remove(todo)
 			}

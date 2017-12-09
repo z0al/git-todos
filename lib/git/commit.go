@@ -16,13 +16,21 @@ package git
 
 import (
 	// Native
+	"os"
 	"os/exec"
+
+	// Ours
+	"github.com/ahmed-taj/git-todos/lib/log"
 )
 
 // Commit runs `git commit` and returns the output/error strings
-func Commit(commit CommitMessage) (string, error) {
+func Commit(commit CommitMessage) {
 	cmd := exec.Command("git", "commit", "-m", commit.Format())
 
-	out, err := cmd.CombinedOutput()
-	return string(out), err
+	_, err := cmd.CombinedOutput()
+	if err != nil {
+		log.Error("Failed to commit. Did you forget to stage your changes?")
+		os.Exit(1)
+	}
+	log.Info("Your work has been commited")
 }
