@@ -25,6 +25,7 @@ import (
 var listCmd = &cobra.Command{
 	Use:     "list",
 	Aliases: []string{"ls"},
+	Args:    cobra.MaximumNArgs(0),
 	Short:   "List available Todos",
 	Run: func(cmd *cobra.Command, args []string) {
 		// Ask the user to select a Todo

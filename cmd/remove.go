@@ -26,6 +26,7 @@ import (
 var removeCmd = &cobra.Command{
 	Use:     "remove",
 	Aliases: []string{"rm", "delete"},
+	Args:    cobra.MaximumNArgs(0),
 	Short:   "Remove existing Todo",
 	Run: func(cmd *cobra.Command, args []string) {
 		// Ask the user to select a Todo

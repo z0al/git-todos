@@ -29,6 +29,7 @@ var VERSION = "X.Y.Z"
 var versionCmd = &cobra.Command{
 	Use:     "version",
 	Aliases: []string{"about"},
+	Args:    cobra.MaximumNArgs(0),
 	Short:   "Print the version number",
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Printf(`
