@@ -35,8 +35,11 @@ var addCmd = &cobra.Command{
 		// The questions to ask
 		questions := []*survey.Question{
 			{
-				Name:     "title",
-				Validate: survey.Required,
+				Name: "title",
+				Validate: survey.ComposeValidators(
+					survey.MinLength(1),
+					survey.MaxLength(79),
+				),
 				Prompt: &survey.Input{
 					Message: "Title",
 					Help:    " A friendly, meaningful, single-line description",
