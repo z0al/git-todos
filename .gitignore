@@ -39,3 +39,6 @@ vendor
 !.vscode/launch.json
 !.vscode/extensions.json
 .history
+
+### Git todos ###
+.todos.yml

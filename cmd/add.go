@@ -15,12 +15,12 @@
 package cmd
 
 import (
-	// Native
-	"fmt"
-
 	// Packages
 	"github.com/spf13/cobra"
 	"gopkg.in/AlecAivazis/survey.v1"
+
+	// Ours
+	"github.com/ahmed-taj/git-todos/lib/todos"
 )
 
 // Flag
@@ -29,7 +29,8 @@ var simple bool
 var addCmd = &cobra.Command{
 	Use:     "add",
 	Aliases: []string{"create", "new"},
-	Short:   "Add a new Todo item",
+	Args:    cobra.MaximumNArgs(0),
+	Short:   "Add a Todo item",
 	Run: func(cmd *cobra.Command, args []string) {
 		// The questions to ask
 		questions := []*survey.Question{
@@ -38,7 +39,7 @@ var addCmd = &cobra.Command{
 				Validate: survey.Required,
 				Prompt: &survey.Input{
 					Message: "Title",
-					Help:    " A friendly, meaningful, single-line description for this Todo",
+					Help:    " A friendly, meaningful, single-line description",
 				},
 			},
 		}
@@ -60,12 +61,10 @@ var addCmd = &cobra.Command{
 			Description string
 		}{}
 
-		// Finaly, Ask!
-		survey.Ask(questions, &answers)
-
-		fmt.Println("title is ", answers.Title)
-		fmt.Println("Desc is ", answers.Description)
-		fmt.Println("DONE")
+		// Finally, Ask!
+		if err := survey.Ask(questions, &answers); err == nil {
+			todos.Add(answers.Title, answers.Description)
+		}
 	},
 }
 
