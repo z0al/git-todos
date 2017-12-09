@@ -17,6 +17,9 @@ package git
 import (
 	// Native
 	"strings"
+
+	// Packages
+	wordwrap "github.com/mitchellh/go-wordwrap"
 )
 
 // CommitMessage type
@@ -43,7 +46,7 @@ func (c CommitMessage) Format() string {
 
 	// BODY
 	if c.Body != "" {
-		msg += c.Body + "\n\n"
+		msg += wordwrap.WrapString(c.Body, 79) + "\n\n"
 	}
 	// FOOTER
 	if c.Close != "" {

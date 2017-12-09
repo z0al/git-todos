@@ -27,6 +27,12 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/mitchellh/go-wordwrap"
+  packages = ["."]
+  revision = "ad45545899c7b13c020ea92b2072220eefad42b8"
+
+[[projects]]
+  branch = "master"
   name = "github.com/spf13/cobra"
   packages = ["."]
   revision = "ccaecb155a2177302cb56cae929251a256d0f646"
@@ -64,6 +70,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "df3aa025d12dd934c3333618a8e65c6c5c1af20b1a8d9011ac2e411f27e0d8ec"
+  inputs-digest = "d6092053142d43d5ab86b447fba27391ff4f958e5b0c2ca13c773c433886824a"
   solver-name = "gps-cdcl"
   solver-version = 1

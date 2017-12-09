@@ -5,8 +5,8 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/ahmed-taj/git-todos/lib/log"
 	// Packages
+	"github.com/ahmed-taj/git-todos/lib/log"
 )
 
 // Show displays little encouragements while you work
