@@ -17,10 +17,12 @@ package cmd
 import (
 	// Packages
 	"github.com/spf13/cobra"
+	"github.com/ttacon/chalk"
 	survey "gopkg.in/AlecAivazis/survey.v1"
 
 	// Ours
 	"github.com/ahmed-taj/git-todos/lib/encourage"
+	"github.com/ahmed-taj/git-todos/lib/log"
 	"github.com/ahmed-taj/git-todos/lib/todos"
 )
 
@@ -35,6 +37,7 @@ var removeCmd = &cobra.Command{
 
 		if err == nil {
 			yes := false
+			log.Warn("This Todo will be removed: " + chalk.Cyan.Color(todo.Title))
 			prompt := &survey.Confirm{Message: "Are you sure?"}
 			survey.AskOne(prompt, &yes, nil)
 
