@@ -32,6 +32,7 @@ import (
 type Todo struct {
 	Title       string
 	Description string
+	Marked      bool
 }
 
 // TodoCollection represents an array of Todos

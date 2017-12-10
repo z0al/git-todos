@@ -50,10 +50,17 @@ var listCmd = &cobra.Command{
 
 			count := 0
 			for _, t := range titles {
+				// Keep track of order
 				count++
-				// e.g 1)
-				n := fmt.Sprint(count) + ")"
-				fmt.Printf("%s %s\n", chalk.Bold.TextStyle(n), t)
+				// Format numbers
+				var num string
+				if todos[t].Marked {
+					num = chalk.Cyan.Color("*") + ")"
+				} else {
+					num = fmt.Sprint(count) + ")"
+				}
+				// Print the line
+				fmt.Printf("%s %s\n", chalk.Bold.TextStyle(num), t)
 			}
 			fmt.Println("\nYou've got this 😎")
 		}
