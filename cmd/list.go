@@ -17,6 +17,7 @@ package cmd
 import (
 	// Native
 	"fmt"
+	"sort"
 
 	// Packages
 	"github.com/spf13/cobra"
@@ -39,8 +40,16 @@ var listCmd = &cobra.Command{
 		} else {
 			fmt.Println()
 
-			count := 0
+			// Extract Todo titles
+			var titles []string
 			for t := range todos {
+				titles = append(titles, t)
+			}
+			// Sort them
+			sort.Strings(titles)
+
+			count := 0
+			for _, t := range titles {
 				count++
 				// e.g 1)
 				n := fmt.Sprint(count) + ")"
