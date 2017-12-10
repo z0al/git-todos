@@ -34,12 +34,19 @@ var listCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		// Get all Todos from store
 		todos := todos.List()
-		count := 0
-		for t := range todos {
-			count++
-			// e.g 1)
-			n := fmt.Sprint(count) + ")"
-			fmt.Printf("%s %s\n", chalk.Bold.TextStyle(n), t)
+		if len(todos) == 0 {
+			fmt.Println("All done. You rock! 🚀")
+		} else {
+			fmt.Println()
+
+			count := 0
+			for t := range todos {
+				count++
+				// e.g 1)
+				n := fmt.Sprint(count) + ")"
+				fmt.Printf("%s %s\n", chalk.Bold.TextStyle(n), t)
+			}
+			fmt.Println("\nYou've got this 😎")
 		}
 	},
 }
