@@ -34,6 +34,7 @@ type Todo struct {
 	Title       string
 	Description string
 	Marked      bool
+	ID          int
 }
 
 // TodoCollection represents an array of Todos
