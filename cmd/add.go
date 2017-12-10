@@ -49,7 +49,7 @@ var addCmd = &cobra.Command{
 		}
 
 		if !simple {
-			// We only ask for additional if --simple flag is false
+			// We only ask for description if --simple flag is not set
 			questions = append(questions, &survey.Question{
 				Name: "description",
 				Prompt: &survey.Input{
@@ -79,8 +79,6 @@ var addCmd = &cobra.Command{
 }
 
 func init() {
-	appCmd.AddCommand(addCmd)
-
 	// Flag: -s, --simple, to simplify new Todos creation
 	addCmd.Flags().BoolVarP(
 		&simple,
@@ -88,4 +86,6 @@ func init() {
 		false,
 		"Don't ask for long description",
 	)
+
+	appCmd.AddCommand(addCmd)
 }
