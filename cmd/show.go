@@ -22,11 +22,10 @@ import (
 	"github.com/ahmed-taj/git-todos/lib/todos"
 )
 
-var listCmd = &cobra.Command{
-	Use:     "list",
-	Aliases: []string{"ls", "show"},
-	Args:    cobra.MaximumNArgs(0),
-	Short:   "List available Todos",
+var showCmd = &cobra.Command{
+	Use:   "show",
+	Args:  cobra.MaximumNArgs(0),
+	Short: "Show Todo details",
 	Run: func(cmd *cobra.Command, args []string) {
 		// Ask the user to select a Todo
 		todo, err := todos.Select()
@@ -38,5 +37,5 @@ var listCmd = &cobra.Command{
 }
 
 func init() {
-	appCmd.AddCommand(listCmd)
+	appCmd.AddCommand(showCmd)
 }
