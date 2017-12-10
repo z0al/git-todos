@@ -45,5 +45,5 @@ func GetMarkedOrSelected(marked bool) (Todo, error) {
 		}
 	}
 	// Failed? Ask the user to select from available Todos
-	return Select()
+	return Select(List())
 }

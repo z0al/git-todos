@@ -30,7 +30,7 @@ var markCmd = &cobra.Command{
 	Short:   "Mark a single Todo",
 	Run: func(cmd *cobra.Command, args []string) {
 		// Ask the user to select a Todo
-		todo, err := todos.Select()
+		todo, err := todos.Select(todos.List())
 
 		if err == nil {
 			todos.Mark(todo)

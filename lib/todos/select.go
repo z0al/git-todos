@@ -25,10 +25,7 @@ import (
 
 // Select asks the user to select a single Todo from all avaiable Todos and
 // returns it.
-func Select() (Todo, error) {
-	// All Todos
-	todosMap := List()
-
+func Select(todosMap map[string]Todo) (Todo, error) {
 	// Extract Todo titles
 	var titles []string
 	for t := range todosMap {
@@ -39,7 +36,7 @@ func Select() (Todo, error) {
 
 	var selected string
 	prompt := &survey.Select{
-		Message:  "Select a Todo " + chalk.Dim.TextStyle("(Use arrow keys)"),
+		Message:  "Select an item " + chalk.Dim.TextStyle("(Use arrow keys)"),
 		Options:  titles,
 		PageSize: 10,
 	}
