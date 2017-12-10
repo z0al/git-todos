@@ -24,7 +24,7 @@ import (
 	"github.com/ahmed-taj/git-todos/lib/todos"
 )
 
-// Flag
+// Flags
 var simple bool
 
 var addCmd = &cobra.Command{
@@ -60,14 +60,17 @@ var addCmd = &cobra.Command{
 		}
 
 		// The answers will be written to this struct
-		answers := struct {
-			Title       string
-			Description string
-		}{}
+		answers := todos.Todo{}
 
 		// Finally, Ask!
 		if err := survey.Ask(questions, &answers); err == nil {
+			// Add the Todo
 			todos.Add(answers.Title, answers.Description)
+
+			// --marked?
+			if marked {
+				todos.Mark(answers)
+			}
 
 			// :)
 			encourage.Show()

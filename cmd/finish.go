@@ -32,8 +32,8 @@ var finishCmd = &cobra.Command{
 	Args:    cobra.MaximumNArgs(0),
 	Short:   "Finish a Todo and commit staged changes",
 	Run: func(cmd *cobra.Command, args []string) {
-		// Ask the user to select a Todo
-		todo, err := todos.Select()
+		// Get marked todo (if --marked) or ask the user to select one
+		todo, err := todos.GetMarkedOrSelected(marked)
 
 		if err == nil {
 			// Make a field as optional

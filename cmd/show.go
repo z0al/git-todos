@@ -27,8 +27,8 @@ var showCmd = &cobra.Command{
 	Args:  cobra.MaximumNArgs(0),
 	Short: "Show Todo details",
 	Run: func(cmd *cobra.Command, args []string) {
-		// Ask the user to select a Todo
-		todo, err := todos.Select()
+		// Get marked todo (if --marked) or ask the user to select one
+		todo, err := todos.GetMarkedOrSelected(marked)
 
 		if err == nil {
 			todos.FormatAndPrint(todo)

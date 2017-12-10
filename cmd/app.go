@@ -26,6 +26,9 @@ import (
 	"github.com/ahmed-taj/git-todos/lib/log"
 )
 
+// Global flags
+var marked bool
+
 // appCmd represents the base command when called without any subcommands
 var appCmd = &cobra.Command{
 	Use:   "git-todos [command]",
@@ -49,6 +52,15 @@ var appCmd = &cobra.Command{
 			os.Exit(1)
 		}
 	},
+}
+
+func init() {
+	appCmd.PersistentFlags().BoolVarP(
+		&marked,
+		"marked", "m",
+		false,
+		"Run command within the context of the marked Todo (if possible)",
+	)
 }
 
 // Execute adds all child commands to the app command and sets flags

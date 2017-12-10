@@ -33,3 +33,17 @@ func Mark(todo Todo) {
 		log.Info("A Todo has been marked")
 	}
 }
+
+// GetMarkedOrSelected todo item
+func GetMarkedOrSelected(marked bool) (Todo, error) {
+	if marked {
+		// Try to get the marked Todo
+		for _, t := range store.Todos {
+			if t.Marked {
+				return t, nil
+			}
+		}
+	}
+	// Failed? Ask the user to select from available Todos
+	return Select()
+}
