@@ -16,6 +16,7 @@ package todos
 
 import (
 	// Native
+	"fmt"
 	"io/ioutil"
 	"os"
 	"path"
@@ -61,33 +62,27 @@ func init() {
 	} else {
 		// Attempt to read todos file
 		src, err := ioutil.ReadFile(filename)
+		format := "An error occured when trying to read Todos from '%s'"
+
 		if err != nil {
-			exitWithError(filename)
+			log.Error(fmt.Sprintf(format, filename))
+			os.Exit(1)
 		}
 
 		// Attempt to read existing todos
 		err = yaml.Unmarshal(src, &store)
 		if err != nil {
-			exitWithError(filename)
+			log.Error(fmt.Sprintf(format, filename))
+			os.Exit(1)
 		}
 	}
 }
 
-// ============================================================================
-// Helpers
-// ============================================================================
-
+// Write current todos to disk
 func saveTodos() bool {
 	output, _ := yaml.Marshal(&store)
 	if err := ioutil.WriteFile(filename, output, 0777); err != nil {
 		return false
 	}
 	return true
-}
-
-func exitWithError(filename string) {
-	log.Error(
-		"An error occured when trying to read Todos from '" + filename + "'",
-	)
-	os.Exit(1)
 }
