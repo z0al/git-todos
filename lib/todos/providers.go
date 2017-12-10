@@ -123,7 +123,7 @@ func (gh GitHubProvider) Search(term string) []Todo {
 			)
 		}
 	} else {
-		log.Warn("No items found matching the search term")
+		log.Warn("No items found matching the search query")
 	}
 
 	return todosList
