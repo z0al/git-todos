@@ -28,6 +28,12 @@ func Info(msg string) {
 	fmt.Println(msg)
 }
 
+// Wait prints waiting messages
+func Wait(msg string) {
+	fmt.Print(chalk.Cyan, "⧗ ", chalk.Reset)
+	fmt.Println(msg)
+}
+
 // Warn prints warning messages
 func Warn(msg string) {
 	fmt.Print(chalk.Yellow, "⚠ ", chalk.Reset)
