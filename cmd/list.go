@@ -34,15 +34,15 @@ var listCmd = &cobra.Command{
 	Short:   "List available Todos",
 	Run: func(cmd *cobra.Command, args []string) {
 		// Get all Todos from store
-		todos := todos.List()
-		if len(todos) == 0 {
+		todosMap := todos.List()
+		if len(todosMap) == 0 {
 			fmt.Println("All done. You rock! 🚀")
 		} else {
 			fmt.Println()
 
 			// Extract Todo titles
 			var titles []string
-			for t := range todos {
+			for t := range todosMap {
 				titles = append(titles, t)
 			}
 			// Sort them
@@ -54,7 +54,7 @@ var listCmd = &cobra.Command{
 				count++
 				// Format numbers
 				var num string
-				if todos[t].Marked {
+				if todosMap[t].Marked {
 					num = chalk.Cyan.Color("*") + ")"
 				} else {
 					num = fmt.Sprint(count) + ")"
