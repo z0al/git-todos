@@ -37,5 +37,11 @@ var showCmd = &cobra.Command{
 }
 
 func init() {
+	showCmd.Flags().BoolVarP(
+		&marked,
+		"marked", "m",
+		false,
+		"Automatically select the marked Todo (if any)",
+	)
 	appCmd.AddCommand(showCmd)
 }

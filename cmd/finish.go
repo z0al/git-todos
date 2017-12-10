@@ -105,5 +105,12 @@ var finishCmd = &cobra.Command{
 }
 
 func init() {
+	finishCmd.Flags().BoolVarP(
+		&marked,
+		"marked", "m",
+		false,
+		"Automatically select the marked Todo (if any)",
+	)
+
 	appCmd.AddCommand(finishCmd)
 }

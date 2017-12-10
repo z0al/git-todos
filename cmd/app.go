@@ -54,15 +54,6 @@ var appCmd = &cobra.Command{
 	},
 }
 
-func init() {
-	appCmd.PersistentFlags().BoolVarP(
-		&marked,
-		"marked", "m",
-		false,
-		"Run command within the context of the marked Todo (if possible)",
-	)
-}
-
 // Execute adds all child commands to the app command and sets flags
 // appropriately. This is called by main.main().
 func Execute() {

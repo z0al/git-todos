@@ -79,12 +79,17 @@ var addCmd = &cobra.Command{
 }
 
 func init() {
-	// Flag: -s, --simple, to simplify new Todos creation
 	addCmd.Flags().BoolVarP(
 		&simple,
 		"simple", "s",
 		false,
 		"Don't ask for long description",
+	)
+	addCmd.Flags().BoolVarP(
+		&marked,
+		"marked", "m",
+		false,
+		"Automatically mark the new Todo",
 	)
 
 	appCmd.AddCommand(addCmd)

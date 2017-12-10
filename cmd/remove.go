@@ -51,5 +51,12 @@ var removeCmd = &cobra.Command{
 }
 
 func init() {
+	removeCmd.Flags().BoolVarP(
+		&marked,
+		"marked", "m",
+		false,
+		"Automatically select the marked Todo (if any)",
+	)
+
 	appCmd.AddCommand(removeCmd)
 }
