@@ -24,18 +24,18 @@ import (
 
 // Info prints info messages
 func Info(msg string) {
-	fmt.Print(chalk.Green, "✔ ", chalk.Reset, " ")
+	fmt.Print(chalk.Green, "✔ ", chalk.Reset)
 	fmt.Println(msg)
 }
 
 // Warn prints warning messages
 func Warn(msg string) {
-	fmt.Print(chalk.Yellow, "⚠ ", chalk.Reset, " ")
+	fmt.Print(chalk.Yellow, "⚠ ", chalk.Reset)
 	fmt.Println(msg)
 }
 
 // Error prints error messages
 func Error(msg string) {
-	fmt.Print(chalk.Red, "✖ ", chalk.Reset, " ")
+	fmt.Print(chalk.Red, "✖ ", chalk.Reset)
 	fmt.Println(msg)
 }
