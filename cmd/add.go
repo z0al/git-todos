@@ -24,9 +24,6 @@ import (
 	"github.com/ahmed-taj/git-todos/lib/todos"
 )
 
-// Flags
-var simple bool
-
 var addCmd = &cobra.Command{
 	Use:     "add",
 	Aliases: []string{"create", "new"},

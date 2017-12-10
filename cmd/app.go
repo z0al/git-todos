@@ -26,8 +26,9 @@ import (
 	"github.com/ahmed-taj/git-todos/lib/log"
 )
 
-// Global flags
+// Common flags containers
 var marked bool
+var simple bool
 
 // appCmd represents the base command when called without any subcommands
 var appCmd = &cobra.Command{
