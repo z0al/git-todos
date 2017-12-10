@@ -39,7 +39,7 @@ func Select() (Todo, error) {
 
 	var selected string
 	prompt := &survey.Select{
-		Message:  "Select Todo " + chalk.Dim.TextStyle("(Use arrow keys)"),
+		Message:  "Select a Todo " + chalk.Dim.TextStyle("(Use arrow keys)"),
 		Options:  titles,
 		PageSize: 10,
 	}
