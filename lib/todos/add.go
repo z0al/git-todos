@@ -15,12 +15,18 @@
 package todos
 
 import (
+	// Native
+	"strings"
+
 	// Ours
 	"github.com/ahmed-taj/git-todos/lib/log"
 )
 
 // Add creates new Todo
 func Add(title string, desc string) {
+	// Trim spaces
+	title = strings.TrimSpace(title)
+	desc = strings.TrimSpace(desc)
 	// Append a new item to the store
 	store.Todos = append(store.Todos, Todo{Title: title, Description: desc})
 
