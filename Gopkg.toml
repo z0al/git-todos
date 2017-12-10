@@ -40,3 +40,7 @@
 [[constraint]]
   branch = "master"
   name = "github.com/mitchellh/go-wordwrap"
+
+[[constraint]]
+  name = "github.com/tcnksm/go-gitconfig"
+  version = "0.1.2"

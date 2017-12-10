@@ -14,26 +14,16 @@
 
 package todos
 
-import (
-	// Native
-	"strings"
+// ImportList returns title -> Todo map for provider issues list
+func ImportList(term string, client Provider) map[string]Todo {
+	// Title => Todo Map
+	all := make(map[string]Todo)
 
-	// Ours
-	"github.com/ahmed-taj/git-todos/lib/log"
-)
+	// Errors should be handled in Provider.Search!
+	todos := client.Search(term)
 
-// Add creates new Todo
-func Add(title, desc string, id int) {
-	// Trim spaces
-	title = strings.TrimSpace(title)
-	desc = strings.TrimSpace(desc)
-	// Append a new item to the store
-	store.Todos = append(
-		store.Todos, Todo{Title: title, Description: desc, ID: id},
-	)
-
-	// Write to .todos.yml
-	if saveTodos() {
-		log.Info("A Todo has been added")
+	for _, t := range todos {
+		all[t.Title] = t
 	}
+	return all
 }

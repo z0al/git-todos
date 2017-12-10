@@ -62,7 +62,7 @@ var addCmd = &cobra.Command{
 		// Finally, Ask!
 		if err := survey.Ask(questions, &answers); err == nil {
 			// Add the Todo
-			todos.Add(answers.Title, answers.Description)
+			todos.Add(answers.Title, answers.Description, 0)
 
 			// --marked?
 			if marked {
