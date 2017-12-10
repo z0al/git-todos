@@ -19,7 +19,7 @@ import (
 	"github.com/spf13/cobra"
 
 	// Ours
-	"github.com/ahmed-taj/git-todos/lib/encourage"
+	"github.com/ahmed-taj/git-todos/lib/helpers"
 	"github.com/ahmed-taj/git-todos/lib/todos"
 )
 
@@ -34,7 +34,7 @@ var markCmd = &cobra.Command{
 
 		if err == nil {
 			todos.Mark(todo)
-			encourage.Show()
+			helpers.Encourage()
 		}
 	},
 }

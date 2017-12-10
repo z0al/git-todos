@@ -22,9 +22,11 @@ import (
 	"net/url"
 	"os"
 
+	// Packages
+	"github.com/ttacon/chalk"
+
 	// Ours
 	"github.com/ahmed-taj/git-todos/lib/log"
-	"github.com/ttacon/chalk"
 )
 
 // Provider interface

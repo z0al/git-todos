@@ -21,7 +21,7 @@ import (
 	survey "gopkg.in/AlecAivazis/survey.v1"
 
 	// Ours
-	"github.com/ahmed-taj/git-todos/lib/encourage"
+	"github.com/ahmed-taj/git-todos/lib/helpers"
 	"github.com/ahmed-taj/git-todos/lib/log"
 	"github.com/ahmed-taj/git-todos/lib/todos"
 )
@@ -43,8 +43,7 @@ var removeCmd = &cobra.Command{
 
 			if yes {
 				todos.Remove(todo)
-				// :)
-				encourage.Show()
+				helpers.Encourage()
 			}
 		}
 	},

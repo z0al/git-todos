@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package encourage
+package helpers
 
 import (
 	// Native
@@ -23,8 +23,8 @@ import (
 	"github.com/ahmed-taj/git-todos/lib/log"
 )
 
-// Show displays little encouragements while you work
-func Show() {
+// Encourage displays little encouragements while you work
+func Encourage() {
 	// Random generator
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 

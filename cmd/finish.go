@@ -21,8 +21,8 @@ import (
 	survey "gopkg.in/AlecAivazis/survey.v1"
 
 	// Ours
-	"github.com/ahmed-taj/git-todos/lib/encourage"
 	"github.com/ahmed-taj/git-todos/lib/git"
+	"github.com/ahmed-taj/git-todos/lib/helpers"
 	"github.com/ahmed-taj/git-todos/lib/todos"
 )
 
@@ -96,9 +96,7 @@ var finishCmd = &cobra.Command{
 
 				// The todo should no longer exist; git log to see your history
 				todos.Remove(todo)
-
-				// :)
-				encourage.Show()
+				helpers.Encourage()
 			}
 		}
 	},

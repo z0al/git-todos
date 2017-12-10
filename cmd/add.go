@@ -20,7 +20,7 @@ import (
 	survey "gopkg.in/AlecAivazis/survey.v1"
 
 	// Ours
-	"github.com/ahmed-taj/git-todos/lib/encourage"
+	"github.com/ahmed-taj/git-todos/lib/helpers"
 	"github.com/ahmed-taj/git-todos/lib/todos"
 )
 
@@ -68,9 +68,7 @@ var addCmd = &cobra.Command{
 			if marked {
 				todos.Mark(answers)
 			}
-
-			// :)
-			encourage.Show()
+			helpers.Encourage()
 		}
 	},
 }
