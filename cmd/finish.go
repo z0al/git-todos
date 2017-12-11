@@ -15,6 +15,9 @@
 package cmd
 
 import (
+	// Native
+	"fmt"
+
 	// Packages
 	"github.com/spf13/cobra"
 	"github.com/ttacon/chalk"
@@ -36,6 +39,12 @@ var finishCmd = &cobra.Command{
 		todo, err := todos.GetMarkedOrSelected(marked)
 
 		if err == nil {
+			issues := ""
+			// Zero means no linked issue!
+			if todo.ID != 0 {
+				issues = fmt.Sprint(todo.ID)
+			}
+
 			// Make a field as optional
 			optionalField := func(str string) string {
 				return str + " " + chalk.Dim.TextStyle("(Optional)")
@@ -82,6 +91,7 @@ var finishCmd = &cobra.Command{
 					Prompt: &survey.Input{
 						Message: optionalField("List any issues closed by this change"),
 						Help:    " Comma-separated list of issue numbers to be closed",
+						Default: issues,
 					},
 				},
 			}
