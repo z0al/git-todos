@@ -39,7 +39,7 @@ var addCmd = &cobra.Command{
 					survey.MaxLength(70),
 				),
 				Prompt: &survey.Input{
-					Message: "Title",
+					Message: helpers.RequiredField("Title"),
 					Help:    " A friendly, meaningful, single-line description",
 				},
 			},

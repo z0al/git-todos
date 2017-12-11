@@ -20,7 +20,6 @@ import (
 
 	// Packages
 	"github.com/spf13/cobra"
-	"github.com/ttacon/chalk"
 	survey "gopkg.in/AlecAivazis/survey.v1"
 
 	// Ours
@@ -45,25 +44,23 @@ var finishCmd = &cobra.Command{
 				issues = fmt.Sprint(todo.ID)
 			}
 
-			// Make a field as optional
-			optionalField := func(str string) string {
-				return str + " " + chalk.Dim.TextStyle("(Optional)")
-			}
-
 			// The questions to ask
 			questions := []*survey.Question{
 				{
-					Name:     "type",
-					Validate: survey.Required,
+					Name: "type",
 					Prompt: &survey.Input{
-						Message: "Type of change that you're committing",
-						Help:    " E.g., a fix, feat, chore ..etc",
+						Default: "feat",
+						Message: helpers.RequiredField(
+							"Type of change that you're committing",
+						),
+						Help: " E.g., a fix, feat, chore ..etc",
 					},
+					Validate: survey.Required,
 				},
 				{
 					Name: "scope",
 					Prompt: &survey.Input{
-						Message: optionalField("Denote the scope of this change"),
+						Message: "Denote the scope of this change",
 						Help:    " Additional contextual information to commit's type",
 					},
 				},
@@ -82,14 +79,14 @@ var finishCmd = &cobra.Command{
 				{
 					Name: "body",
 					Prompt: &survey.Input{
-						Message: optionalField("Longer description of the change"),
+						Message: "Longer description of the change",
 						Help:    " More detailed description for your chagnes",
 					},
 				},
 				{
 					Name: "close",
 					Prompt: &survey.Input{
-						Message: optionalField("List any issues closed by this change"),
+						Message: "List any issues closed by this change",
 						Help:    " Comma-separated list of issue numbers to be closed",
 						Default: issues,
 					},
