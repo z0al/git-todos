@@ -51,7 +51,7 @@ var addCmd = &cobra.Command{
 				Name: "description",
 				Prompt: &survey.Input{
 					Message: "Description",
-					Help:    " A longer description for this Todo. Markdown is supported",
+					Help:    " A longer description for this Todo",
 				},
 			})
 		}
