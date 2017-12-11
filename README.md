@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./docs/logo.png" width="128" alt="Git Todos Logo"/>
+  <img src="./docs/logo.png" width="200" alt="Git Todos Logo"/>
   <p>A Git based Todos App for Developers</p>
 
   <hr>
@@ -73,4 +73,4 @@ Give it a star(:star:) :point_up_2:
 
 ## License
 
-The project is released under the Apache 2.0 license © [Ahmed T. Ali](https://github.com/ahmed-taj)
+The project is released under the Apache 2.0 license. See [LICENSE](./LICENSE)
