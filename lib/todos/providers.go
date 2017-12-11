@@ -70,9 +70,8 @@ func (gh GitHubProvider) Search(term string) []Todo {
 
 	// Search parameters
 	query := url.Values{}
-	q := term + "+repo:" + getRepoSlug(info.Path)
+	q := fmt.Sprintf("%s repo:%s type:issue", term, getRepoSlug(info.Path))
 	query.Add("q", q)
-	query.Add("sort", "created")
 	query.Add("order", "desc")
 	query.Add("per_page", pageSize)
 
