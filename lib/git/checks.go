@@ -32,5 +32,5 @@ func IsInstalled() bool {
 func GetRoot() (string, error) {
 	cmd := exec.Command("git", "rev-parse", "--show-toplevel")
 	root, err := cmd.CombinedOutput()
-	return strings.Trim(string(root), " \t\n"), err
+	return strings.TrimSpace(string(root)), err
 }

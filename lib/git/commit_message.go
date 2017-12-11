@@ -52,14 +52,14 @@ func (c CommitMessage) Format() string {
 	if c.Close != "" {
 		msg += c.issuesList()
 	}
-	return strings.Trim(msg, " \n")
+	return strings.TrimSpace(msg)
 }
 
 // 1,2,3 => Closes #1, #2, #3
 func (c CommitMessage) issuesList() string {
 	var numbers []string
 	for _, item := range strings.Split(c.Close, ",") {
-		item = strings.Trim(item, " ")
+		item = strings.TrimSpace(item)
 		if item != "" {
 			numbers = append(numbers, "#"+item)
 		}
