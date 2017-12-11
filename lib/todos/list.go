@@ -26,7 +26,9 @@ import (
 func List() map[string]Todo {
 	dict := make(map[string]Todo)
 	for _, t := range store.Todos {
-		dict[t.Title] = t
+		key := t.Title + formatID(t.ID)
+
+		dict[key] = t
 	}
 	return dict
 }
@@ -36,8 +38,24 @@ func FormatAndPrint(t Todo) {
 	fmt.Println()
 
 	// Title
-	fmt.Printf("%s\n\n", chalk.Underline.TextStyle(t.Title))
+	fmt.Printf("%s", chalk.Underline.TextStyle(t.Title))
+
+	// Issue ID
+	fmt.Println(formatID(t.ID))
+	fmt.Println()
 
 	// Description
-	fmt.Println(t.Description)
+	if t.Description != "" {
+		fmt.Println(t.Description)
+	} else {
+		fmt.Println("(No description)")
+	}
+}
+
+func formatID(id int) string {
+	if id != 0 {
+		str := fmt.Sprintf("#%d", id)
+		return fmt.Sprintf("%s (%s)", chalk.Reset, chalk.Magenta.Color(str))
+	}
+	return ""
 }

@@ -14,6 +14,11 @@
 
 package todos
 
+import (
+	// Native
+	"strings"
+)
+
 // ImportList returns title -> Todo map for provider issues list
 func ImportList(term string, client Provider) map[string]Todo {
 	// Title => Todo Map
@@ -23,7 +28,9 @@ func ImportList(term string, client Provider) map[string]Todo {
 	todos := client.Search(term)
 
 	for _, t := range todos {
-		all[t.Title] = t
+		key := strings.TrimSpace(t.Title) + formatID(t.ID)
+
+		all[key] = t
 	}
 	return all
 }
