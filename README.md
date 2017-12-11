@@ -29,7 +29,7 @@
 * :octocat: Easily import issues from GitHub
 * :v: Adds a little bit of encouragements
 
-Interrested to learn more? Read the original [blog post]().
+Interrested to learn more? Read the original [blog post](https://medium.com/ahmed-t-ali/local-to-dos-for-developers-d871682a069).
 
 ## Installation
 
