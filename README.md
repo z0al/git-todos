@@ -24,9 +24,9 @@
 ## Features
 
 * :raised_hands: Developers friendly
-* :octocat: Easily import issues from GitHub
-* :book: Uses plain text file as storage
 * :rocket: Helps to get things done
+* :book: Uses plain text file as storage
+* :octocat: Easily import issues from GitHub
 * :v: Adds a little bit of encouragements
 
 Interrested to learn more? Read the original [blog post]().
@@ -41,7 +41,7 @@ Do you prefer another way to install? [Let me know](https://github.com/ahmed-taj
 
 ## Usage
 
-The project provides a simple Command Line Interface (CLI). You may run it either by typing `git-todos` or `git todos` both works!
+The project provides a simple Command Line Interface (CLI). You may run it either by typing `git-todos` or `git todos`!
 
 ```sh
 $ git todos help
