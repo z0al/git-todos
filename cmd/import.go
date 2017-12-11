@@ -43,7 +43,7 @@ var importCmd = &cobra.Command{
 		prompt := &survey.Input{Message: "Search query"}
 
 		if err := survey.AskOne(prompt, &term, nil); err == nil {
-			// TODO: support different remote names i.e. upstream
+			// @todo: support different remote names other than origin
 			remote := "origin"
 			url, err := config.Local(fmt.Sprintf("remote.%s.url", remote))
 
@@ -54,7 +54,7 @@ var importCmd = &cobra.Command{
 				os.Exit(1)
 			}
 
-			// TODO: support custom provider!
+			// @todo: support custom To-Dos provider!
 			provider := todos.GitHubProvider{URL: url}
 
 			log.Wait(
