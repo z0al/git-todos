@@ -12,11 +12,11 @@
 
 ## Features
 
-* 🙆 Developers friendly
+* :raised_hands: Developers friendly
 * :octocat: Easily import issues from GitHub
-* 📖 Uses plain text file as storage
-* 🚀 Helps to get things done
-* ✌ Adds a little bit of encouragements
+* :book: Uses plain text file as storage
+* :rocket: Helps to get things done
+* :v: Adds a little bit of encouragements
 
 Interrested to learn more? Read the original [blog post]().
 
