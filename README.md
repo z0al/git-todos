@@ -1,13 +1,24 @@
 <div align="center">
   <img src="./docs/logo.png" width="128" alt="Git Todos Logo"/>
-
   <p>A Git based Todos App for Developers</p>
-  <hr>
-  <img src="https://img.shields.io/github/downloads/ahmed-taj/git-todos/latest/total.svg?style=flat-square" href="https://github.com/ahmed-taj/git-todos/releases"/>
-  <img src="https://img.shields.io/github/release/ahmed-taj/git-todos.svg?style=flat-square" href="https://github.com/ahmed-taj/git-todos/releases"/>
 
-  <img src="https://img.shields.io/badge/Say%20Thanks-💖-CA1F7B.svg?style=flat-square" href="https://saythanks.io/to/ahmed-taj"/>
-  <img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social" href="http://twitter.com/home?status=Check out this cool project by @ah_tajelsir https://git.io/todos"/>
+  <hr>
+
+  <a href="https://github.com/ahmed-taj/git-todos/releases">
+    <img src="https://img.shields.io/github/downloads/ahmed-taj/git-todos/latest/total.svg?style=flat-square" />
+  </a>
+
+  <a href="https://github.com/ahmed-taj/git-todos/releases">
+    <img src="https://img.shields.io/github/release/ahmed-taj/git-todos.svg?style=flat-square" />
+  </a>
+
+  <a href="https://saythanks.io/to/ahmed-taj">
+    <img src="https://img.shields.io/badge/Say%20Thanks-💖-CA1F7B.svg?style=flat-square"/>
+  </a>
+
+  <a href="http://twitter.com/home?status=Check out this cool project by @ah_tajelsir https://git.io/todos">
+    <img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"/>
+  </a>
 </div>
 
 ## Features
