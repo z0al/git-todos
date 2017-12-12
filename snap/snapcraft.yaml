@@ -3,13 +3,14 @@ version: 0.1.0
 summary: A Git based Todos App for Developers
 description: >
   Git-todos is Command Line Interface (CLI) that helps to manage local To-Dos
-  with ease. It aims to help you get things done rather than orginizing them.
-  More specifically, you can use Git-todos to:
+  with ease.
 
-    - Add/remove To-Do items locally
-    - Store To-Dos list per-repository
-    - Search and import issues from remote repositories as To-Dos
-    - Automatic generation of Git commits
+  It aims to help you get things done rather than organizing them. You can use
+  Git-todos to add/remove To-Do items locally, import issues from remote
+  repositories and to automate the generation of Git commits.
+
+  Git-todos stores To-Dos list locally, and per-repository. For more information
+  visit https://git.io/todos
 
 confinement: classic
 grade: stable
