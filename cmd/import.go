@@ -31,29 +31,29 @@ import (
 	"github.com/ahmed-taj/git-todos/lib/todos"
 )
 
+var remoteName string
+
 var importCmd = &cobra.Command{
 	Use:     "import",
 	Aliases: []string{"pull", "get"},
 	Args:    cobra.MaximumNArgs(0),
 	Short:   "Import an issue from remote Provider (ie. GitHub) as Todo",
 	Run: func(cmd *cobra.Command, args []string) {
+		// Get remote URL from the local git configs
+		url, err := config.Local(fmt.Sprintf("remote.%s.url", remoteName))
+
+		if err != nil {
+			log.Error(
+				fmt.Sprintf("Remote (%s) is not set", chalk.Cyan.Color(remoteName)),
+			)
+			os.Exit(1)
+		}
+
 		// Search term
 		var term string
-
 		prompt := &survey.Input{Message: "Search query"}
 
 		if err := survey.AskOne(prompt, &term, nil); err == nil {
-			// @todo support different remote names other than origin
-			remote := "origin"
-			url, err := config.Local(fmt.Sprintf("remote.%s.url", remote))
-
-			if err != nil {
-				log.Error(
-					fmt.Sprintf("Remote (%s) is not set", chalk.Cyan.Color(remote)),
-				)
-				os.Exit(1)
-			}
-
 			// @todo support custom To-Dos provider!
 			provider := todos.GitHubProvider{URL: url}
 
@@ -61,7 +61,7 @@ var importCmd = &cobra.Command{
 				fmt.Sprintf(
 					"Fetching items from %s (%s)",
 					chalk.Cyan.Color(provider.Name()),
-					chalk.Yellow.Color(remote),
+					chalk.Yellow.Color(remoteName),
 				),
 			)
 
@@ -91,12 +91,20 @@ var importCmd = &cobra.Command{
 }
 
 func init() {
+	importCmd.Flags().StringVarP(
+		&remoteName,
+		"remote", "r",
+		"origin",
+		"Specify remote name",
+	)
+
 	importCmd.Flags().BoolVarP(
 		&simple,
 		"simple", "s",
 		false,
 		"Don't import remote issue description",
 	)
+
 	importCmd.Flags().BoolVarP(
 		&marked,
 		"marked", "m",
