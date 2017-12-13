@@ -26,5 +26,7 @@ brew:
   commit_author:
     name: Ahmed T. Ali
     email: ah.tajelsir@gmail.com
+  dependencies:
+    - git
   test: |
     system "#{bin}/git-todos version"
