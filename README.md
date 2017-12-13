@@ -5,19 +5,19 @@
   <hr>
 
   <a href="https://github.com/ahmed-taj/git-todos/releases">
-    <img src="https://img.shields.io/github/downloads/ahmed-taj/git-todos/latest/total.svg?style=flat-square" />
+    <img src="https://img.shields.io/github/downloads/ahmed-taj/git-todos/latest/total.svg?style=flat-square" alt="downloads count"/>
   </a>
 
   <a href="https://github.com/ahmed-taj/git-todos/releases">
-    <img src="https://img.shields.io/github/release/ahmed-taj/git-todos.svg?style=flat-square" />
+    <img src="https://img.shields.io/github/release/ahmed-taj/git-todos.svg?style=flat-square" alt="current release number"/>
   </a>
 
   <a href="https://saythanks.io/to/ahmed-taj">
-    <img src="https://img.shields.io/badge/Say%20Thanks-💖-CA1F7B.svg?style=flat-square"/>
+    <img src="https://img.shields.io/badge/Say%20Thanks-💖-CA1F7B.svg?style=flat-square" alt="say thanks to the author"/>
   </a>
 
   <a href="http://twitter.com/home?status=Check out this cool project by @ah_tajelsir https://git.io/todos">
-    <img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"/>
+    <img src="https://img.shields.io/badge/Share-with%20friends-blue.svg?logo=twitter&style=flat-square" alt="share with friends on twitter"/>
   </a>
 </div>
 
