@@ -19,4 +19,4 @@ before_install:
 install: dep ensure
 
 after_success:
-  - test "$TRAVIS_GO_VERSION" =~ "^1\.9\.[0-9]+$" -a -n "$TRAVIS_TAG" && curl -sL https://git.io/goreleaser | bash
+  - test -n "$TRAVIS_TAG" && curl -sL https://git.io/goreleaser | bash
