@@ -44,6 +44,26 @@ Interrested to learn more? Read the original [blog post](https://medium.com/ahme
 
 You can grab the latest binary from the [releases](https://github.com/ahmed-taj/git-todos/releases) page.
 
+### Install on Linux
+
+On Linux you can install or update to the latest released version with [snap](https://snapcraft.io/):
+
+```bash
+$ snap install git-todos
+$ snap refresh git-todos
+```
+
+> **Note:** Because snaps with [strict](https://docs.snapcraft.io/reference/confinement) confinement can't access the global `~/.gitconfig` file, you may need to configure `user.name` and `user.email` per repository in order for git-todos to perform commits.
+>
+> Run these commands to resolve the issue:
+>
+> ```bash
+> $ git config --local user.email "you@example.com"
+> $ git config --local user.name "Your Name"
+> ```
+
+### Install on macOS
+
 On macOS you can install or upgrade to the latest released version with Homebrew:
 
 ```bash

@@ -30,6 +30,14 @@ func Commit(commit CommitMessage) {
 	_, err := cmd.CombinedOutput()
 	if err != nil {
 		log.Error("Failed to commit. Did you forget to stage your changes?")
+		log.Warn(`If you installed git-todos using snap (https://snapcraft.io) then you may
+  need to tell git who you are!
+
+  Run:
+    git config --local user.email "you@example.com"
+    git config --local user.name "Your Name"
+`,
+		)
 		os.Exit(1)
 	}
 	log.Info("Your work has been commited")

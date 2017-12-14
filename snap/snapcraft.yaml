@@ -12,10 +12,13 @@ description: >
   Git-todos stores To-Dos list locally, and per-repository. For more information
   visit https://git.io/todos
 
-confinement: classic
+confinement: strict
 grade: stable
 
 parts:
+  git:
+    plugin: autotools
+    source: https://github.com/git/git/archive/v2.15.1.tar.gz
   git-todos:
     plugin: dump
     source: https://github.com/ahmed-taj/git-todos/releases/download/v$SNAPCRAFT_PROJECT_VERSION/git-todos_$SNAPCRAFT_PROJECT_VERSION_linux_amd64.tar.gz
@@ -23,3 +26,6 @@ parts:
 apps:
   git-todos:
     command: git-todos
+    plugs:
+      - home
+      - network
