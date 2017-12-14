@@ -21,6 +21,13 @@
   </a>
 </div>
 
+Git-todos is Command Line Interface (CLI) that helps to manage local To-Dos
+with ease. It aims to help you get things done rather than organizing them.
+
+You can use Git-todos to add/remove To-Do items locally, import issues from
+remote repositories and to automate the generation of Git commits. Git-todos
+stores To-Dos list locally, and per-repository.
+
 ## Features
 
 * :book: Uses plain text file as storage
@@ -35,7 +42,7 @@ Interrested to learn more? Read the original [blog post](https://medium.com/ahme
 
 [![Latest release](https://img.shields.io/github/release/ahmed-taj/git-todos.svg?style=flat-square)](https://github.com/ahmed-taj/git-todos/releases)
 
-Grab the latest binary from the [releases](https://github.com/ahmed-taj/git-todos/releases) page.
+You can grab the latest binary from the [releases](https://github.com/ahmed-taj/git-todos/releases) page.
 
 On macOS you can install or upgrade to the latest released version with Homebrew:
 
@@ -49,10 +56,12 @@ Do you prefer another way to install? [Let me know](https://github.com/ahmed-taj
 
 ## Usage
 
-The project provides a simple Command Line Interface (CLI). You may run it either by typing `git-todos` or `git todos`!
+The project provides a simple Command Line Interface (CLI). To use the tool simply
+run `git-todos`. If the tool binary is available in your system `PATH` you may
+also run it without the `-` e.g: `git todos <command>`, thanks to Git.
 
 ```bash
-$ git todos help
+$ git-todos help
 A Git based Todos App for Developers ⚡
 
 Usage:
@@ -77,7 +86,7 @@ Use "git-todos [command] --help" for more information about a command.
 
 ## Like it?
 
-Give it a star(:star:) :point_up_2:
+Give it a star(:star:) :point_up_2: and share it with your friends. Enjoy!
 
 ## License
 
