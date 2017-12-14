@@ -26,8 +26,6 @@ parts:
       - libz-dev
       - libssl-dev
     source: https://github.com/git/git/archive/v2.15.1.tar.gz
-    plugs:
-      - home
 
   git-todos:
     plugin: dump
