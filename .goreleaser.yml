@@ -16,3 +16,17 @@ archive:
   files:
   - LICENSE
   - README.md
+brew:
+  github:
+    owner: ahmed-taj
+    name: homebrew-git-todos
+  folder: Formula
+  homepage:  http://git.io/todos
+  description: A Git based Todos App for Developers
+  commit_author:
+    name: Ahmed T. Ali
+    email: ah.tajelsir@gmail.com
+  dependencies:
+    - git
+  test: |
+    system "#{bin}/git-todos version"
