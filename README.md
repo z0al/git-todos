@@ -23,9 +23,9 @@
 
 ## Features
 
+* :book: Uses plain text file as storage
 * :raised_hands: Developers friendly
 * :rocket: Helps to get things done
-* :book: Uses plain text file as storage
 * :octocat: Easily import issues from GitHub
 * :v: Adds a little bit of encouragements
 
@@ -37,13 +37,21 @@ Interrested to learn more? Read the original [blog post](https://medium.com/ahme
 
 Grab the latest binary from the [releases](https://github.com/ahmed-taj/git-todos/releases) page.
 
+On macOS you can install or upgrade to the latest released version with Homebrew:
+
+```bash
+$ brew tap ahmed-taj/git-todos
+$ brew install git-todos
+$ brew upgrade git-todos
+```
+
 Do you prefer another way to install? [Let me know](https://github.com/ahmed-taj/git-todos/issues/new)
 
 ## Usage
 
 The project provides a simple Command Line Interface (CLI). You may run it either by typing `git-todos` or `git todos`!
 
-```sh
+```bash
 $ git todos help
 A Git based Todos App for Developers ⚡
 
