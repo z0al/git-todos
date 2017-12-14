@@ -10,7 +10,7 @@ description: >
   repositories and to automate the generation of Git commits.
 
   Git-todos stores To-Dos list locally, and per-repository. For more information
-  visit https://git.io/todos
+  visit https://git.io/todos.
 
 confinement: strict
 grade: stable
