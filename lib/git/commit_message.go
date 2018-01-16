@@ -55,17 +55,14 @@ func (c CommitMessage) Format() string {
 	return strings.TrimSpace(msg)
 }
 
-// 1,2,3 => Closes #1, #2, #3
+// issuesList formats array of numbers to GitHub issue closing pattern
 func (c CommitMessage) issuesList() string {
-	var numbers []string
+	var issues []string
 	for _, item := range strings.Split(c.Close, ",") {
 		item = strings.TrimSpace(item)
 		if item != "" {
-			numbers = append(numbers, "#"+item)
+			issues = append(issues, "Closes #"+item)
 		}
 	}
-	if len(numbers) > 0 {
-		return "Closes " + strings.Join(numbers, ", ")
-	}
-	return ""
+	return strings.Join(issues, "\n")
 }

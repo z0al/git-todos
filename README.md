@@ -5,7 +5,7 @@
   <hr>
 
   <a href="https://github.com/ahmed-taj/git-todos/releases">
-    <img src="https://img.shields.io/github/downloads/ahmed-taj/git-todos/latest/total.svg?style=flat-square" alt="downloads count"/>
+    <img src="https://img.shields.io/github/downloads/ahmed-taj/git-todos/total.svg?style=flat-square" alt="downloads count"/>
   </a>
 
   <a href="https://github.com/ahmed-taj/git-todos/releases">
