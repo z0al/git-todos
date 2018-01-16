@@ -1,5 +1,5 @@
 name: git-todos
-version: 0.2.1
+version: 0.2.2
 summary: A Git based Todos App for Developers
 description: >
   Git-todos is Command Line Interface (CLI) that helps to manage local To-Dos
